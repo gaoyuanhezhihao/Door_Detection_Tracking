@@ -1,0 +1,18 @@
+﻿Build started 2016/5/20 16:58:19.
+     1>Project "G:\Study\Computer Vision\IndoorNavigation\Door Detection\Door_Detection\Door_Detection\Door_Detection.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program_Programming\VS2013_Community\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt main.cpp
+         main.cpp
+     1>G:\Study\OpenCV3\MyBuild\install\include\opencv2/core/mat.hpp(1965): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>G:\Study\OpenCV3\MyBuild\install\include\opencv2/core/persistence.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>G:\Study\OpenCV3\MyBuild\install\include\opencv2/core/utility.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+       Link:
+         D:\Program_Programming\VS2013_Community\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Study\Computer Vision\IndoorNavigation\Door Detection\Door_Detection\x64\Debug\Door_Detection.exe" /INCREMENTAL /NOLOGO opencv_aruco310d.lib opencv_bgsegm310d.lib opencv_bioinspired310d.lib opencv_calib3d310d.lib opencv_ccalib310d.lib opencv_core310d.lib opencv_datasets310d.lib opencv_dnn310d.lib opencv_dpm310d.lib opencv_face310d.lib opencv_features2d310d.lib opencv_flann310d.lib opencv_fuzzy310d.lib opencv_highgui310d.lib opencv_imgcodecs310d.lib opencv_imgproc310d.lib opencv_line_descriptor310d.lib opencv_ml310d.lib opencv_objdetect310d.lib opencv_optflow310d.lib opencv_photo310d.lib opencv_plot310d.lib opencv_reg310d.lib opencv_rgbd310d.lib opencv_saliency310d.lib opencv_shape310d.lib opencv_stereo310d.lib opencv_stitching310d.lib opencv_structured_light310d.lib opencv_superres310d.lib opencv_surface_matching310d.lib opencv_text310d.lib opencv_tracking310d.lib opencv_ts310d.lib opencv_video310d.lib opencv_videoio310d.lib opencv_videostab310d.lib opencv_xfeatures2d310d.lib opencv_ximgproc310d.lib opencv_xobjdetect310d.lib opencv_xphoto310d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\Study\Computer Vision\IndoorNavigation\Door Detection\Door_Detection\x64\Debug\Door_Detection.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\Study\Computer Vision\IndoorNavigation\Door Detection\Door_Detection\x64\Debug\Door_Detection.lib" /MACHINE:X64 x64\Debug\Camshift.obj
+         x64\Debug\main.obj
+         x64\Debug\main_func.obj
+         Door_Detection.vcxproj -> G:\Study\Computer Vision\IndoorNavigation\Door Detection\Door_Detection\x64\Debug\Door_Detection.exe
+     1>Done Building Project "G:\Study\Computer Vision\IndoorNavigation\Door Detection\Door_Detection\Door_Detection\Door_Detection.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.36
