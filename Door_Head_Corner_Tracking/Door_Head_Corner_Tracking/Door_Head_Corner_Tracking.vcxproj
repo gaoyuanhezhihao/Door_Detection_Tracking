@@ -66,11 +66,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Door_Head_Corner_Tracking.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="feature.cpp" />
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="track_point.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="feature.h" />
     <ClInclude Include="Line.h" />
     <ClInclude Include="track_point.h" />
   </ItemGroup>
