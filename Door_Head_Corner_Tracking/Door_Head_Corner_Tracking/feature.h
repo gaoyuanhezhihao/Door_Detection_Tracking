@@ -18,9 +18,13 @@ using namespace cv;
 #define STD_CELL_PER_BLOCK_COLOMN 3
 #define PI 3.1415927
 #define ALPHA 0.8
-#define BETA 1.5
-#define DETA (5 * PI / 180)
+#define BETA 3
+#define DETA (8 * PI / 180)
 #define TAU 2.0
+#define CHI 1.0 // vertical line threshold ratio.
+#define ETA 0.7 // door head line lenth threshold ratio.
+#define RHO 1 // rho param of the hough line detection function.
+#define THETA (CV_PI / 180) // theta param of the hough line detection function.
 
 enum search_range_state {
 	near_lr_edge,

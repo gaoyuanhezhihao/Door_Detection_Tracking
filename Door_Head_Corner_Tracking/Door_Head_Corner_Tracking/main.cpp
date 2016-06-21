@@ -27,6 +27,8 @@ int main(int argc, char** argv)
 	double duration_ms;
 	clock_t start_time, end_time;
 	Rect line_search_rect, feature_search_rect;
+	Rect old_line_sch_rect, old_ft_sch_rect;
+	Rect p_rect;
 	array<array<double, HoG_GRAD_BIN_SIZE * 9>, 2> feature;
 	double start = double(getTickCount());
 	// Read image from file 
@@ -60,15 +62,26 @@ int main(int argc, char** argv)
 			cap >> search_img;
 			start_time = clock();
 			start = double(getTickCount());
+
 			track_state = track_door(door_head_points, search_img, line_search_rect, feature_search_rect, feature, ALPHA, BETA, DETA);
 			end_time = clock();
 			cout << "clickes: " << end_time - start_time << "seconds: " << ((float)(end_time - start_time) / CLOCKS_PER_SEC) << endl;
 			duration_ms = (double(getTickCount()) - start) * 1000 / getTickFrequency();
 			cout << "It took " << duration_ms << " ms." << endl;
-			circle(search_img, door_head_points[0], 3, Scalar(255, 0, 0));
-			circle(search_img, door_head_points[1], 3, Scalar(255, 0, 0));
-			rectangle(search_img, feature_search_rect, Scalar(0, 100, 0));
-			rectangle(search_img, line_search_rect, Scalar(0, 0, 100));
+			p_rect.x = door_head_points[0].x - STD_CELL_WIDTH*STD_CELL_PER_BLOCK_ROW/2;
+			p_rect.y = door_head_points[0].y - STD_CELL_HEIGHT*STD_CELL_PER_BLOCK_COLOMN/2;
+			p_rect.width = STD_CELL_WIDTH*STD_CELL_PER_BLOCK_ROW;
+			p_rect.height = STD_CELL_HEIGHT*STD_CELL_PER_BLOCK_COLOMN;
+			circle(search_img, door_head_points[0], 3, Scalar(0, 0, 255));
+			rectangle(search_img, p_rect, Scalar(255, 0, 0));
+			circle(search_img, door_head_points[1], 3, Scalar(0, 0, 255));
+			p_rect.x = door_head_points[1].x - STD_CELL_WIDTH*STD_CELL_PER_BLOCK_ROW / 2;
+			p_rect.y = door_head_points[1].y - STD_CELL_HEIGHT*STD_CELL_PER_BLOCK_COLOMN / 2;
+			rectangle(search_img, p_rect, Scalar(255, 0, 0));
+			rectangle(search_img, old_ft_sch_rect, Scalar(0, 100, 0));
+			rectangle(search_img, old_line_sch_rect, Scalar(0, 0, 100));
+			old_line_sch_rect = line_search_rect;
+			old_ft_sch_rect = feature_search_rect;
 			imshow("match image", search_img);
 			break;
 		default:
@@ -78,7 +91,8 @@ int main(int argc, char** argv)
 			init_tracking(door_head_points, img, line_search_rect,feature_search_rect, feature, ALPHA, BETA);
 			rectangle(img, feature_search_rect, Scalar(0, 100, 0));
 			rectangle(img, line_search_rect, Scalar(100, 0, 0));
-
+			old_line_sch_rect = line_search_rect;
+			old_ft_sch_rect = feature_search_rect;
 			//circle(img, door_head_points[0], 3, Scalar(255, 0, 0));
 			//circle(img, door_head_points[1], 3, Scalar(255, 0, 0));
 

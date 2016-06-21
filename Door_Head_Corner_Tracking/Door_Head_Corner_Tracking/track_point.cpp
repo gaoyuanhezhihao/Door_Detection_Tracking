@@ -1,5 +1,9 @@
 #include "track_point.h"
-search_range_state track_door(vector<Point> &door_head_points, Mat &ori_img, Rect & line_rect, Rect & feature_rect, array<array<double, HoG_GRAD_BIN_SIZE * 9>, 2> & feature_hog, double alpha, double beta, double deta) {
+search_range_state track_door(vector<Point> &door_head_points, 
+								Mat &ori_img, Rect & line_rect, 
+								Rect & feature_rect, 
+								array<array<double, HoG_GRAD_BIN_SIZE * 9>, 2> & feature_hog, 
+								double alpha, double beta, double deta) {
 	// calculate the ROI.
 	//double L = cv::norm(door_head_points[0]-door_head_points[1]);
 	//double L = abs(door_head_points[0].x - door_head_points[1].x);
@@ -19,6 +23,7 @@ search_range_state track_door(vector<Point> &door_head_points, Mat &ori_img, Rec
 	search_range_state track_feature_state;
 	search_range_state line_search_range_state;
 	Mat search_im = ori_img(line_rect);
+	double L = abs(door_head_points[0].x - door_head_points[1].x);
 	
 	double head_line_theta = get_theta_from_2point(door_head_points[0], door_head_points[1]);
 	array<array<double, 2>, 2> head_line_neib_theta;
@@ -37,11 +42,11 @@ search_range_state track_door(vector<Point> &door_head_points, Mat &ori_img, Rec
 	vector<Point> inter_points;
 
 	blur(search_im, search_im, Size(3, 3));
-	Canny(search_im, dst, 30, 70, 3);
+	Canny(search_im, dst, 20, 70, 3);
 	cvtColor(dst, cdst, CV_GRAY2BGR);
 
-	HoughLines(dst, long_lines, 1, CV_PI / 180, line_rect.height/3, 0, 0);
-	HoughLines(dst, short_lines, 1, CV_PI / 180, line_rect.width /3, 0, 0);
+	HoughLines(dst, long_lines, RHO, THETA, (int)(L*CHI), 0, 0);
+	HoughLines(dst, short_lines, RHO, THETA, (int)(L*ETA), 0, 0);
 
 
 	select_lines(long_lines, vertical_lines, v_line_neib_theta);
