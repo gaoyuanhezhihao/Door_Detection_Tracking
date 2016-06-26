@@ -1,0 +1,32 @@
+﻿Build started 2016/6/26 16:34:23.
+     1>Project "G:\Study\Computer Vision\IndoorNavigation\Door Detection\indoor_navigation_by_door\indoor_navigation_by_door\indoor_navigation_by_door.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program_Programming\VS2013_Community\VC\bin\x86_amd64\CL.exe /c /IG:\Study\OpenCV3\opencv\build\x64\vc12\..\..\include /Zi /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt communication.cpp
+         communication.cpp
+     1>G:\Study\OpenCV3\opencv\build\include\opencv2/core/mat.hpp(1965): warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>G:\Study\OpenCV3\opencv\build\include\opencv2/core/persistence.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>G:\Study\OpenCV3\opencv\build\include\opencv2/core/utility.hpp : warning C4819: The file contains a character that cannot be represented in the current code page (936). Save the file in Unicode format to prevent data loss
+     1>communication.cpp(41): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>communication.cpp(56): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>communication.cpp(78): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>communication.cpp(79): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>communication.cpp(86): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>communication.cpp(87): warning C4244: '=' : conversion from 'double' to 'unsigned int', possible loss of data
+     1>communication.cpp(113): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>communication.cpp(156): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>communication.cpp(175): warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+     1>g:\study\computer vision\indoornavigation\door detection\indoor_navigation_by_door\indoor_navigation_by_door\communication.cpp(203): warning C4715: 'Init_Socket' : not all control paths return a value
+       Link:
+         D:\Program_Programming\VS2013_Community\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"G:\Study\Computer Vision\IndoorNavigation\Door Detection\indoor_navigation_by_door\x64\Debug\indoor_navigation_by_door.exe" /INCREMENTAL /NOLOGO /LIBPATH:G:\Study\OpenCV3\opencv\build\x64\vc12\lib opencv_world310d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\Study\Computer Vision\IndoorNavigation\Door Detection\indoor_navigation_by_door\x64\Debug\indoor_navigation_by_door.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\Study\Computer Vision\IndoorNavigation\Door Detection\indoor_navigation_by_door\x64\Debug\indoor_navigation_by_door.lib" /MACHINE:X64 x64\Debug\Camshift.obj
+         x64\Debug\communication.obj
+         x64\Debug\FileLogger.obj
+         x64\Debug\main.obj
+         x64\Debug\main_func.obj
+         x64\Debug\vanish_point_door_detection.obj
+         x64\Debug\verification.obj
+         indoor_navigation_by_door.vcxproj -> G:\Study\Computer Vision\IndoorNavigation\Door Detection\indoor_navigation_by_door\x64\Debug\indoor_navigation_by_door.exe
+     1>Done Building Project "G:\Study\Computer Vision\IndoorNavigation\Door Detection\indoor_navigation_by_door\indoor_navigation_by_door\indoor_navigation_by_door.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:04.75

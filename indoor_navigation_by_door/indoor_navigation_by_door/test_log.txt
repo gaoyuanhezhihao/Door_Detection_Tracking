@@ -1,0 +1,3 @@
+My Game Engine, version 0.1
+Log file created
+
